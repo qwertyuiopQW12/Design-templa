@@ -51,7 +51,9 @@
             font-size: 16px;
         }
         button:hover {
+            transform: scale(1.05);
             background-color: #e60000;
+            transition: 0.3s ease;
         }
         .footer {
             margin-top: 20px;
@@ -67,98 +69,141 @@
         }
         .footer a:hover {
             text-decoration: underline;
+            color: #ff6600;
+            transition: 0.3s ease;
         }
     </style>
 </head>
 <body>
-    <h1>طلب تصميم شعار </h1>
-   <form id="designForm">
-    <label for="companyName">اسم الشركة</label>
-    <input type="text" id="companyName" name="companyName" required>
+    <h1>طلب تصميم شعار</h1>
+    <form id="designForm">
+        <label for="companyName">اسم الشركة</label>
+        <input type="text" id="companyName" name="companyName" required>
 
-    <label for="logoType">نوع الشعار</label>
-    <select id="logoType" name="logoType">
-        <option value="ثلاثي الأبعاد">ثلاثي الأبعاد</option>
-        <option value="مسطح">مسطح</option>
-        <option value="مربع">مربع</option>
-    </select>
+        <label for="logoType">نوع الشعار ـ او التصميم</label>
+        <select id="logoType" name="logoType">
+            <option value="ثلاثي الأبعاد">ثلاثي الأبعاد</option>
+            <option value="مسطح">مسطح</option>
+            <option value="مربع">مربع</option>
+             <option value="تصميم تهنئه">تصميم تهنئه</option>
+        </select>
 
-    <label for="fontType">نوع الخط</label>
-    <select id="fontType" name="fontType">
-        <option value="السنبلي">السنبلي</option>
-        <option value="النسخ">النسخ</option>
-        <option value="الديواني">الديواني</option>
-        <option value="الرقعة">الرقعة</option>
-        <option value="التجريدي">التجريدي</option>
-        <option value="الثلث">الثلث</option>
-        <option value="الكوفي">الكوفي</option>
-    </select>
+        <label for="fontType">نوع الخط</label>
+        <select id="fontType" name="fontType">
+            <option value="السنبلي">السنبلي</option>
+            <option value="النسخ">النسخ</option>
+            <option value="الديواني">الديواني</option>
+            <option value="الرقعة">الرقعة</option>
+            <option value="التجريدي">التجريدي</option>
+            <option value="الثلث">الثلث</option>
+            <option value="الكوفي">الكوفي</option>
+        </select>
 
-    <label for="designElements">ما هي العناصر التي يعجبه وجودها في هذا الشعار؟</label>
-    <textarea id="designElements" name="designElements" rows="3" placeholder="مثل الألوان، الخطوط، الرموز"></textarea>
+        <label for="designElements">ما هي العناصر التي يعجبه وجودها في هذا الشعارـ الو التصميم؟</label>
+        <textarea id="designElements" name="designElements" rows="3" placeholder="مثل الألوان، الخطوط، الرموز"></textarea>
 
-    <label for="designFocus">هل يريد التركيز على نوع معين من التصميم؟</label>
-    <select id="designFocus" name="designFocus">
-        <option value="حديث">حديث</option>
-        <option value="كلاسيكي">كلاسيكي</option>
-        <option value="ثلاثي الأبعاد">ثلاثي الأبعاد</option>
-        <option value="مسطح">مسطح</option>
-    </select>
+        <label for="designFocus">هل يريد التركيز على نوع معين من التصميم؟</label>
+        <select id="designFocus" name="designFocus">
+            <option value="حديث">حديث</option>
+            <option value="كلاسيكي">كلاسيكي</option>
+            <option value="ثلاثي الأبعاد">ثلاثي الأبعاد</option>
+            <option value="مسطح">مسطح</option>
+        </select>
 
-    <label for="details">تفاصيل الشعار</label>
-    <textarea id="details" name="details" rows="5" placeholder="اكتب التفاصيل الكاملة للشعار"></textarea>
+        <label for="details">تفاصيل التصميم</label>
+        <textarea id="details" name="details" rows="5" placeholder="اكتب التفاصيل الكاملة للشعار"></textarea>
 
-    <label for="name">اسم العميل</label>
-    <input type="text" id="name" name="name" required>
+        <label for="name">اسم العميل</label>
+        <input type="text" id="name" name="name" required>
 
-    <label for="phone">رقم الهاتف</label>
-    <input type="tel" id="phone" name="phone" required>
+        <label for="phone">رقم الهاتف</label>
+        <input type="tel" id="phone" name="phone" required>
 
-    <label for="logoImage">صورة الشعار (اختياري)</label>
-    <input type="file" id="logoImage" name="logoImage">
+        <label for="paymentMethod">طريقة الدفع</label>
+        <select id="paymentMethod" name="paymentMethod" required>
+            <option value="">اختر طريقة الدفع</option>
+            <option value="بنك الكريمي">بنك الكريمي</option>
+            <option value="جوالي">جوالي</option>
+            <option value="ون كاش">ون كاش</option>
+            <option value="كاش موبايل">كاش موبايل</option>
+            <option value="مبايل موني"> مبايل موني </option>
+            <option value="جيب">جيب</option>
+            <option value="ويسترن يونيون">ويسترن يونيون</option>
+            <option value="موني جرام">موني جرام</option>
+            <option value="بنك التضامن">بنك التضامن</option>
+        </select>
 
-    <button type="button" onclick="sendToWhatsApp()">إرسال الطلب</button>
-</form>
+        <label for="deliveryDate">تاريخ التسليم المطلوب</label>
+        <input type="date" id="deliveryDate" name="deliveryDate">
 
-<div class="logo-image">
-    <p>شعار شركة Fusion Pro</p>
-    <img src="bbbbb.jpg" alt="شعار شركة Fusion Pro" style="width: 100%; max-width: 300px; display: block; margin: 10px auto;">
-</div>
+        <button type="button" onclick="sendToWhatsApp()">إرسال الطلب</button>
+        <button type="reset" style="background-color: #555;">إعادة تعيين</button>
+    </form>
 
-<div class="footer">
-    <p>إدارة شركة Fusion Pro - مجدي المرقب</p>
-    <a href="https://wa.me/967737311305" target="_blank">تواصل عبر الواتساب</a>
-</div>
+    <script>
+        function sendToWhatsApp() {
+            // استخراج القيم من الحقول
+            var companyName = document.getElementById('companyName').value.trim();
+            var logoType = document.getElementById('logoType').value.trim();
+            var fontType = document.getElementById('fontType').value.trim();
+            var designElements = document.getElementById('designElements').value.trim();
+            var designFocus = document.getElementById('designFocus').value.trim();
+            var details = document.getElementById('details').value.trim();
+            var name = document.getElementById('name').value.trim();
+            var phone = document.getElementById('phone').value.trim();
+            var paymentMethod = document.getElementById('paymentMethod').value.trim();
+            var deliveryDate = document.getElementById('deliveryDate').value.trim();
 
-<script>
-    function sendToWhatsApp() {
-        var companyName = document.getElementById('companyName').value;
-        var logoType = document.getElementById('logoType').value;
-        var fontType = document.getElementById('fontType').value;
-        var designElements = document.getElementById('designElements').value;
-        var designFocus = document.getElementById('designFocus').value;
-        var details = document.getElementById('details').value;
-        var name = document.getElementById('name').value;
-        var phone = document.getElementById('phone').value;
+            // التحقق من تعبئة الحقول
+            if (
+                companyName === "" ||
+                logoType === "" ||
+                fontType === "" ||
+                designElements === "" ||
+                designFocus === "" ||
+                details === "" ||
+                name === "" ||
+                phone === "" ||
+                paymentMethod === "" ||
+                deliveryDate === ""
+            ) {
+                alert("يرجى تعبئة جميع الحقول قبل إرسال الطلب.");
+                return;
+            }
 
-        var message = "طلب تصميم شعار\n";
-        message += "*اسم الشركة*: " + companyName + "\n";
-        message += "*نوع الشعار*: " + logoType + "\n";
-        message += "*نوع الخط*: " + fontType + "\n";
-        message += "*العناصر المفضلة*: " + designElements + "\n";
-        message += "*التركيز على*: " + designFocus + "\n";
-        message += "*تفاصيل الشعار*: " + details + "\n";
-        message += "*اسم العميل*: " + name + "\n";
-        message += "*رقم الهاتف*: " + phone;
+            // رسالة الطلب
+            var message = `طلب تصميم شعارFusion Pro:
+            *اسم الشركة*: ${companyName}
+            *نوع الشعار*: ${logoType}
+            *نوع الخط*: ${fontType}
+            *العناصر المفضلة*: ${designElements}
+            *التركيز على*: ${designFocus}
+            *تفاصيل الشعار*: ${details}
+            *اسم العميل*: ${name}
+            *رقم الهاتف*: ${phone}
+            *طريقة الدفع*: ${paymentMethod}
+            *تاريخ التسليم*: ${deliveryDate}`;
+            var encodedMessage = encodeURIComponent(message);
 
-        // ترميز النص ليكون مناسباً للرابط
-        var encodedMessage = encodeURIComponent(message);
-        
-        var whatsappUrl = "https://wa.me/967781400883?text=" + encodedMessage;
+            // اختيار الواتساب
+            var choice = confirm("هل تريد الإرسال عبر واتساب الأعمال؟");
+            var whatsappUrl = choice 
+                ? `https://wa.me/967781400883?text=${encodedMessage}` 
+                : `https://wa.me/967737311305?text=${encodedMessage}`;
 
-        // فتح الرابط
-        window.open(whatsappUrl, '_blank');
-    }
-</script>
+            window.open(whatsappUrl, "_blank");
+        }
+    </script>
 </body>
+<div class="logo-image">
+        <p>  Fusion Pro</p>
+        <img src="bbbbb.jpg" alt="  Fusion Pro" style="width: 100%; max-width: 300px; display: block; margin: 10px auto;">
+    </div>
+
+    <div class="footer">
+        <p>إدارة شركة Fusion Pro - مجدي المرقب</p>
+        <a href="https://wa.me/967737311305" target="_blank">تواصل عبر الواتساب</a>
+    </div>
+
+    <script>
 </html>
